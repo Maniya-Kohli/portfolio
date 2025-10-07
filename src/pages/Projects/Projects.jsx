@@ -5,44 +5,32 @@ import PropTypes from "prop-types";
 
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "Face Emotion Detection (CNN · OpenCV · Keras)",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+      "Developed a real-time facial emotion recognition system using Convolutional Neural Networks, OpenCV, and Keras. The model identifies human emotions from live video feeds and visualizes inference results with confidence metrics.",
+    link: "https://opengraph.githubassets.com/1/Maniya-Kohli/Face-Emotion-Detection",
+    color: "#4F46E5",
+    githubLink: "https://github.com/Maniya-Kohli/Face-Emotion-Detection",
+    liveLink: "",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "SFSU Marketplace — Buy & Sell Platform for Faculty & Students",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
-    color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+      "Led a team in Software Engineering at SFSU to design and develop a full-stack marketplace web app for faculty and students to buy, sell, and exchange items securely. Built with React, Node.js, PostgreSQL, and AWS for deployment.",
+    link: "https://opengraph.githubassets.com/1/CSC-648-SFSU/csc648-sp25-03-team03",
+    color: "#00A9A5",
+    githubLink: "https://github.com/CSC-648-SFSU/csc648-sp25-03-team03",
+    liveLink: "",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "Netflix Database System — Advanced DBMS Project",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
-    color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
-  },
-  {
-    title: "CodeKori 🔥",
-    description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+      "Led a 4-member team in building a relational database for a Netflix-like platform. Designed ER models, implemented SQL schemas, triggers, stored procedures, and optimized queries for high-performance retrieval and relational integrity.",
+    link: "https://opengraph.githubassets.com/1/sfsu-joseo/csc675-775-group-project-sp25-kru2710shna",
+    color: "#E11D48",
+    githubLink:
+      "https://github.com/sfsu-joseo/csc675-775-group-project-sp25-kru2710shna",
+    liveLink: "",
   },
 ];
 

@@ -1,21 +1,21 @@
 import HeroImg from "@/assets/images/hero.jpg";
-import OlovaLogo from "@/assets/images/olova.png";
 
 export default function About() {
   return (
     <>
-      <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
+      <section id="about" className="py-16 md:py-32 text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-          <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Developer, Designer, Creator, Innovator
+          <h2 className="relative z-10 max-w-2xl text-4xl font-medium lg:text-5xl text-white">
+            Software Development Engineer & Backend Problem-Solver
           </h2>
+
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
             <div className="relative mb-6 sm:mb-0">
               <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl p-px from-zinc-300 to-transparent">
                 <img
                   src={HeroImg}
                   className="rounded-[15px] shadow block"
-                  alt="payments illustration"
+                  alt="Engineer crafting scalable backend systems"
                   width={1207}
                   height={929}
                 />
@@ -24,47 +24,97 @@ export default function About() {
 
             <div className="relative space-y-4">
               <p className="text-white">
-                Hello! I'm Nazmul Hossain, a passionate JavaScript developer
-                specializing in creating innovative web solutions and
-                user-friendly interfaces.{" "}
-                <span className="font-bold text-white">
-                  As the creator of the OlovaJS UI Framework
+                Hello! I’m <span className="font-semibold">Maniya Kohli</span>,
+                a Software Development Engineer currently pursuing an M.S. in
+                Computer Science at San Francisco State University. I build
+                scalable, reliable, data-intensive systems using{" "}
+                <span className="font-semibold">
+                  Java/Spring Boot, Python, Node.js, and TypeScript
                 </span>
-                , I'm dedicated to simplifying development workflows.
+                , with production experience across{" "}
+                <span className="font-semibold">
+                  PostgreSQL, MongoDB, Elasticsearch/OpenSearch
+                </span>
+                , and <span className="font-semibold">AWS</span>.
               </p>
+
               <p className="text-white">
-                My focus is on making web development faster, easier, and
-                accessible to all developers. Currently, I'm expanding into
-                backend development to grow as a full-stack developer and create
-                seamless, robust web applications.
+                Previously at CoreValue Technology, I engineered a general-tree,
+                cross-referenced configuration platform that streamlined data
+                management—
+                <span className="font-semibold">
+                  cutting retrieval times by ~30% and improving consistency by
+                  ~40%
+                </span>
+                . I also led large-scale data migrations (
+                <span className="font-semibold">17–18M records</span>) across
+                Elasticsearch→OpenSearch and MongoDB→PostgreSQL with
+                <span className="font-semibold"> 99.9% data integrity</span> and
+                ~<span className="font-semibold">30% downtime reduction</span>,
+                and designed a loyalty/billing integration that supported
+                QR-based bill splitting and point redemption.
               </p>
 
               <div className="pt-6">
                 <blockquote className="border-l-4 border-gray-300 pl-4">
                   <p className="text-white">
-                    I'm a lifelong learner and innovator, driven by a desire to
-                    contribute to the developer community with new ideas and
-                    tools that deliver real value. As the creator of OlovaJS,
-                    I'm pushing the boundaries of JavaScript frameworks to
-                    empower developers worldwide.
+                    I care about building systems that scale gracefully and fail
+                    safely—clean interfaces, strong observability, and
+                    automation over toil. My projects span integration
+                    frameworks, transactional loyalty flows with rollback
+                    guarantees, and archival pipelines for enterprise
+                    data—always with an eye on reliability, developer
+                    ergonomics, and measurable impact.
                   </p>
 
-                  <div className="mt-6 space-y-3">
+                  <div className="mt-6 space-y-1">
                     <cite className="block font-medium text-white">
-                      Nazmul Hossain, Creator of
+                      Maniya Kohli — Software Development Engineer
                     </cite>
-                    <div className="flex items-center gap-2">
-                      <img
-                        className="h-5 w-fit"
-                        src={OlovaLogo}
-                        alt="Olova Logo"
-                        height="20"
-                        width="auto"
-                      />
-                      <span className="text-white">OlovaJS</span>
+                    <div className="text-sm text-zinc-300 space-y-1">
+                      <p>
+                        San Francisco, CA ·{" "}
+                        <a
+                          className="underline"
+                          href="mailto:maniyakohli07@gmail.com"
+                        >
+                          maniyakohli07@gmail.com
+                        </a>{" "}
+                        ·{" "}
+                        <a className="underline" href="tel:+14154908789">
+                          +1 (415) 490-8789
+                        </a>
+                      </p>
+                      <p className="flex flex-wrap gap-3">
+                        <a
+                          className="underline"
+                          href="https://www.linkedin.com/in/maniya-kohli-719577223/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          LinkedIn
+                        </a>
+                        <a
+                          className="underline"
+                          href="https://github.com/Maniya-Kohli"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          GitHub
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </blockquote>
+              </div>
+
+              <div className="pt-2 text-sm text-zinc-300">
+                <p>
+                  Core tools: Python, Node.js, Java, C/C++, TypeScript ·
+                  Databases: MongoDB, PostgreSQL, OpenSearch/Elasticsearch,
+                  MySQL · Cloud/DevOps: AWS, Docker, Grafana · Frameworks:
+                  Spring Boot
+                </p>
               </div>
             </div>
           </div>
