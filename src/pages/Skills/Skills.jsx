@@ -67,34 +67,6 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
 const SkillsSection = () => {
   const skillCategories = [
     {
-      icon: Code2,
-      title: "Frontend Development",
-      color: "text-blue-400",
-      skills: [
-        { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
-        {
-          name: "Next.js",
-          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
-        },
-        {
-          name: "TypeScript",
-          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
-        },
-        {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "HTML5",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
-        },
-        {
-          name: "CSS3",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
-        },
-      ],
-    },
-    {
       icon: Database,
       title: "Backend Development",
       color: "text-green-400",
@@ -126,25 +98,34 @@ const SkillsSection = () => {
       ],
     },
     {
-      icon: Layout,
-      title: "UI/UX Design",
-      color: "text-purple-400",
+      icon: Code2,
+      title: "Frontend Development",
+      color: "text-blue-400",
       skills: [
-        { name: "Figma", icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" /> },
+        { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
         {
-          name: "Responsive Design",
-          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
+          name: "Next.js",
+          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
         },
         {
-          name: "Wireframing",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#9CA3AF]" />,
+          name: "TypeScript",
+          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
         },
         {
-          name: "Prototyping",
-          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
+          name: "Tailwind CSS",
+          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
+        },
+        {
+          name: "HTML5",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
+        },
+        {
+          name: "CSS3",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
         },
       ],
     },
+
     {
       icon: Cloud,
       title: "Cloud & DevOps",
@@ -178,36 +159,8 @@ const SkillsSection = () => {
           name: "Webpack",
           icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
         },
-        { name: "Redux", icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
-        {
-          name: "Firebase",
-          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
-        },
         { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-white" /> },
         { name: "Vite", icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: "Creative Skills",
-      color: "text-yellow-400",
-      skills: [
-        {
-          name: "UI Animation",
-          icon: <MdAnimation className="w-4 h-4 text-[#FF4081]" />,
-        },
-        {
-          name: "SVG Animation",
-          icon: <MdAnimation className="w-4 h-4 text-[#00C853]" />,
-        },
-        {
-          name: "3D Modeling",
-          icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" />,
-        },
-        {
-          name: "Motion Graphics",
-          icon: <MdAnimation className="w-4 h-4 text-[#FF6D00]" />,
-        },
       ],
     },
   ];
@@ -221,7 +174,7 @@ const SkillsSection = () => {
         <div className="flex justify-center items-center ">
           <IconCloudDemo />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 place-items-center">
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}
@@ -246,7 +199,8 @@ const SkillsSection = () => {
           animation: shimmer 2s infinite;
         }
         .bg-grid-pattern {
-          background-image: linear-gradient(
+          background-image:
+            linear-gradient(
               to right,
               rgba(100, 100, 255, 0.1) 1px,
               transparent 1px

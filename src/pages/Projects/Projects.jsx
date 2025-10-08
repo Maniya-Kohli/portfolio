@@ -80,8 +80,8 @@ export default function Projects() {
     window.addEventListener("resize", checkResolution);
 
     return () => {
-      document.head.removeChild(style);
       window.removeEventListener("resize", checkResolution);
+      document.head.removeChild(style);
     };
   }, []);
 
@@ -103,7 +103,7 @@ export default function Projects() {
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
                 githubLink={project.githubLink}
-                liveLink={project.liveLink}
+                hasNext={i < projects.length - 1}
               />
             );
           })}
@@ -123,7 +123,7 @@ function Card({
   range,
   targetScale,
   githubLink,
-  liveLink,
+  hasNext,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -141,14 +141,11 @@ function Card({
           marginTop: "var(--project-margin, 0)",
         }}
         className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
-        whileHover={{
-          y: -8,
-          transition: { duration: 0.3 },
-        }}
+        whileHover={{ y: -8, transition: { duration: 0.3 } }}
       >
         {/* Modern split card design */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          {/* Image section - full width on mobile, 55% on desktop */}
+          {/* Image */}
           <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
             <motion.img
               src={url}
@@ -158,8 +155,6 @@ function Card({
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
             />
-
-            {/* Colored overlay on hover */}
             <motion.div
               className="absolute inset-0"
               style={{ backgroundColor: color, mixBlendMode: "overlay" }}
@@ -167,14 +162,12 @@ function Card({
               whileHover={{ opacity: 0.3 }}
               transition={{ duration: 0.3 }}
             />
-
-            {/* Project number */}
             <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
               Project {i + 1}
             </div>
           </div>
 
-          {/* Content section - full width on mobile, 45% on desktop */}
+          {/* Content */}
           <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -195,7 +188,6 @@ function Card({
 
             <div className="mt-4 md:mt-auto pt-4">
               <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
-
               <div className="flex items-center gap-4">
                 {/* GitHub Link */}
                 <motion.a
@@ -226,48 +218,33 @@ function Card({
                     Code
                   </span>
                 </motion.a>
-
-                {/* Live Link */}
-                <motion.a
-                  href={liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={color}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Live
-                  </span>
-                </motion.a>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Scroll hint */}
+        {hasNext && (
+          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400">
+            <span className="text-xs md:text-sm">Scroll</span>
+            <svg
+              className="w-6 h-6 md:w-7 md:h-7 animate-bounce"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+        )}
       </motion.div>
     </div>
   );
 }
 
-// Add PropTypes validation
+// PropTypes
 Card.propTypes = {
   i: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
@@ -278,5 +255,5 @@ Card.propTypes = {
   range: PropTypes.array.isRequired,
   targetScale: PropTypes.number.isRequired,
   githubLink: PropTypes.string.isRequired,
-  liveLink: PropTypes.string.isRequired,
+  hasNext: PropTypes.bool,
 };

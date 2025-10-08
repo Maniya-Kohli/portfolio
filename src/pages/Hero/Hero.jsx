@@ -51,7 +51,7 @@ const profile = {
     name: 'Maniya Kohli',
     title: 'Full-Stack Developer | Problem Solver',
     skills: [
-        'React', 'NextJS', 'Redux', 'Express',
+        'NodeJs', 'Python', 'React', 'NextJS', 'Express',
         'MySQL', 'MongoDB', 'Docker', 'AWS', 'TypeScript',
         'GraphQL', 'Git', 'Linux', 'Discord Development'
     ],
@@ -64,7 +64,7 @@ const profile = {
             this.hardWorker &&
             this.problemSolver &&
             this.skills.length >= 5 &&
-            this.yearsOfExperience >= 3
+            this.yearsOfExperience >= 1.5
         );
     }
 };
