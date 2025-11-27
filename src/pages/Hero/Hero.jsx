@@ -170,7 +170,7 @@ const profile = {
             }}
           >
             {/* Left column - Text content */}
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative flex flex-col gap-4 sm:gap-19">
+            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative flex flex-col gap-4 sm:gap-6">
               {/* Decorative blurs */}
               <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
               <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
@@ -220,16 +220,24 @@ const profile = {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex justify-start animate__animated animate__fadeInUp animate__delay-2s mt-2">
+              <div className="flex flex-nowrap items-center gap-4 animate__animated animate__fadeInUp animate__delay-2s mt-2">
                 <a
                   href="/ManiyaKohliResume_SDE.pdf"
                   download="ManiyaKohli_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
+                  className="flex-1 group flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] whitespace-nowrap"
                 >
                   <i className="fas fa-file-pdf text-white text-xl animate-pulse"></i>
                   <span>Download Resume</span>
+                </a>
+
+                <a
+                  href="/projects" // or "#projects" if it's a section on the same page
+                  className="flex-1 group flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] whitespace-nowrap"
+                >
+                  <i className="fas fa-code text-white text-xl"></i>
+                  <span>See my Projects</span>
                 </a>
               </div>
 
@@ -278,7 +286,7 @@ const profile = {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
           <span className="text-gray-400 text-sm flex items-center gap-2">
             <i className="fas fa-mouse text-blue-400"></i>
-            About me
+            {/* About me */}
           </span>
           <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
         </div>
