@@ -26,6 +26,11 @@ import {
   SiFirebase,
   SiVercel,
   SiVite,
+  SiPytorch,
+  SiTensorflow,
+  SiPandas,
+  SiNumpy,
+  SiOpenai,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
@@ -33,9 +38,9 @@ import { MdAnimation } from "react-icons/md";
 import { FcWorkflow } from "react-icons/fc";
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+  <Card className="h-full flex flex-col group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(100,100,255,0.1)] to-transparent group-hover:via-[rgba(100,100,255,0.2)] animate-shimmer"></div>
-    <CardContent className="p-6 relative z-10">
+    <CardContent className="p-6 relative z-10 flex flex-col h-full">
       <div className="flex items-center gap-4 mb-6">
         <div
           className={`p-3 rounded-xl bg-gray-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}
@@ -46,6 +51,8 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
           {title}
         </h3>
       </div>
+
+      {/* badges now sit right below the header */}
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
           <Badge
@@ -126,6 +133,59 @@ const SkillsSection = () => {
       ],
     },
 
+    // 🔥 New AI/ML & LLMs category
+    {
+      icon: Cpu,
+      title: "AI/ML & LLMs",
+      color: "text-purple-400",
+      skills: [
+        {
+          name: "PyTorch",
+          icon: <SiPytorch className="w-4 h-4 text-[#EE4C2C]" />,
+        },
+        {
+          name: "TensorFlow",
+          icon: <SiTensorflow className="w-4 h-4 text-[#FF6F00]" />,
+        },
+        {
+          name: "scikit-learn",
+          icon: <SiPandas className="w-4 h-4 text-[#F7931E]" />,
+        },
+        {
+          name: "Pandas",
+          icon: <SiPandas className="w-4 h-4 text-[#150458]" />,
+        },
+        {
+          name: "NumPy",
+          icon: <SiNumpy className="w-4 h-4 text-[#013243]" />,
+        },
+        {
+          name: "LangChain",
+          icon: <Cpu className="w-4 h-4 text-[#22C55E]" />,
+        },
+        {
+          name: "LlamaIndex",
+          icon: <Cpu className="w-4 h-4 text-[#A855F7]" />,
+        },
+        {
+          name: "OpenAI API",
+          icon: <SiOpenai className="w-4 h-4 text-[#10A37F]" />,
+        },
+        {
+          name: "Hugging Face",
+          icon: <MdAnimation className="w-4 h-4 text-[#FFCC4D]" />,
+        },
+        {
+          name: "ChromaDB",
+          icon: <Database className="w-4 h-4 text-[#38BDF8]" />,
+        },
+        {
+          name: "Pinecone",
+          icon: <Database className="w-4 h-4 text-[#22C55E]" />,
+        },
+      ],
+    },
+
     {
       icon: Cloud,
       title: "Cloud & DevOps",
@@ -146,7 +206,7 @@ const SkillsSection = () => {
       ],
     },
     {
-      icon: Cpu,
+      icon: Layout,
       title: "Tools & Technologies",
       color: "text-pink-400",
       skills: [
@@ -171,10 +231,13 @@ const SkillsSection = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
 
       <section className="container mx-auto px-4 py-11 relative z-10">
-        <div className="flex justify-center items-center ">
+        {/* Centered globe / icon cloud */}
+        <div className="flex justify-center items-center mb-10">
           <IconCloudDemo />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 place-items-center">
+
+        {/* Skill cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch">
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}
@@ -186,6 +249,7 @@ const SkillsSection = () => {
           ))}
         </div>
       </section>
+
       <style jsx>{`
         @keyframes shimmer {
           0% {

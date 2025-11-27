@@ -5,6 +5,18 @@ import PropTypes from "prop-types";
 
 const projects = [
   {
+    title: "AI Travel Planning Platform — RAG · Agents · Vector Search",
+    description:
+      "Building a full-stack AI travel planning platform using retrieval-augmented generation, multi-tool agents, and vector search to generate personalized itineraries. Integrates LLMs with location data, user preferences, and external APIs to produce production-ready travel plans.",
+    // use your own image, not GitHub OG
+    link: "https://github.com/Maniya-Kohli/travel-ai-platform",
+    image:
+      "https://raw.githubusercontent.com/Maniya-Kohli/travel-ai-platform/main/public/travel-ai-og.png",
+    color: "#22C55E",
+    githubLink: "https://github.com/Maniya-Kohli/travel-ai-platform",
+    liveLink: "",
+  },
+  {
     title: "Face Emotion Detection (CNN · OpenCV · Keras)",
     description:
       "Developed a real-time facial emotion recognition system using Convolutional Neural Networks, OpenCV, and Keras. The model identifies human emotions from live video feeds and visualizes inference results with confidence metrics.",
@@ -104,6 +116,7 @@ export default function Projects() {
                 targetScale={targetScale}
                 githubLink={project.githubLink}
                 hasNext={i < projects.length - 1}
+                image={project.image}
               />
             );
           })}
@@ -124,9 +137,11 @@ function Card({
   targetScale,
   githubLink,
   hasNext,
+  image,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
+  const hasImage = Boolean(image);
 
   return (
     <div
@@ -144,29 +159,47 @@ function Card({
         whileHover={{ y: -8, transition: { duration: 0.3 } }}
       >
         {/* Modern split card design */}
+
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
           {/* Image */}
-          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
-            <motion.img
-              src={url}
-              alt={title}
-              className="w-full h-full object-cover"
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.4 }}
-            />
+          <div className="w-full md:w-[55%] aspect-[4/3] md:aspect-[4/3] lg:aspect-[4/3] relative overflow-hidden bg-black">
+            {hasImage ? (
+              <motion.img
+                src={image}
+                alt={title}
+                className="w-full h-full object-contain"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-zinc-800 via-zinc-900 to-black">
+                <div
+                  className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/40"
+                  style={{ borderColor: color }}
+                >
+                  <span className="text-lg" role="img" aria-label="project">
+                    🚀
+                  </span>
+                </div>
+                <p className="px-4 text-center text-sm md:text-base font-medium text-gray-200">
+                  {title}
+                </p>
+              </div>
+            )}
+
             <motion.div
-              className="absolute inset-0"
+              className="absolute inset-0 pointer-events-none"
               style={{ backgroundColor: color, mixBlendMode: "overlay" }}
               initial={{ opacity: 0 }}
-              whileHover={{ opacity: 0.3 }}
+              whileHover={{ opacity: 0.18 }}
               transition={{ duration: 0.3 }}
             />
+
             <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
               Project {i + 1}
             </div>
           </div>
-
           {/* Content */}
           <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
             <div>
@@ -222,7 +255,6 @@ function Card({
             </div>
           </div>
         </div>
-
         {/* Scroll hint */}
         {hasNext && (
           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400">
@@ -256,4 +288,5 @@ Card.propTypes = {
   targetScale: PropTypes.number.isRequired,
   githubLink: PropTypes.string.isRequired,
   hasNext: PropTypes.bool,
+  image: PropTypes.string,
 };

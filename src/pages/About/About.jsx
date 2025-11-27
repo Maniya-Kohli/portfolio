@@ -27,49 +27,83 @@ export default function About() {
                 Hello! I’m <span className="font-semibold">Maniya Kohli</span>,
                 a Software Development Engineer currently pursuing an M.S. in
                 Computer Science at San Francisco State University. I build
-                scalable, reliable, data-intensive systems using{" "}
+                scalable, reliable, data-intensive and AI-powered systems using{" "}
                 <span className="font-semibold">
-                  Java/Spring Boot, Python, Node.js, and TypeScript
+                  Python , TypeScript , NextJS , Java/Spring Boot, Node.js,
                 </span>
                 , with production experience across{" "}
                 <span className="font-semibold">
-                  PostgreSQL, MongoDB, Elasticsearch/OpenSearch
+                  PostgreSQL, MongoDB, Elasticsearch/OpenSearch, and AWS
                 </span>
-                , and <span className="font-semibold">AWS</span>.
+                , and an AI/ML stack that includes{" "}
+                <span className="font-semibold">
+                  NumPy, Pandas, scikit-learn, PyTorch, TensorFlow, LangChain,
+                  LlamaIndex, and OpenAI/Gemini APIs
+                </span>
+                .
               </p>
 
+              {/* New FETCH Pay + AI paragraph */}
               <p className="text-white">
-                Previously at CoreValue Technology, I engineered a general-tree,
-                cross-referenced configuration platform that streamlined data
-                management—
+                I’ve got solid experience working as a Software Developer at{" "}
+                <a
+                  href="https://fetchpay.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline font-semibold"
+                >
+                  FETCH Pay
+                </a>
+                , where I led backend architecture for the{" "}
                 <span className="font-semibold">
-                  cutting retrieval times by ~30% and improving consistency by
-                  ~40%
+                  TreeFlow Integration System
                 </span>
-                . I also led large-scale data migrations (
-                <span className="font-semibold">17–18M records</span>) across
-                Elasticsearch→OpenSearch and MongoDB→PostgreSQL with
-                <span className="font-semibold"> 99.9% data integrity</span> and
-                ~<span className="font-semibold">30% downtime reduction</span>,
-                and designed a loyalty/billing integration that supported
-                QR-based bill splitting and point redemption.
+                . I implemented a general tree with cross-referencing using{" "}
+                <span className="font-semibold">
+                  Python, TypeScript, PostgreSQL, MongoDB, and Docker
+                </span>{" "}
+                to ensure configurations reliably flowed down to child nodes. I
+                move across the stack and learn fast: I’ve built end-to-end
+                systems at the intersection of backend{" "}
+                <span className="font-semibold">
+                  (Python with FastAPI, Node.js, PostgreSQL, MongoDB)
+                </span>
+                , infrastructure{" "}
+                <span className="font-semibold">(AWS, Docker)</span> (
+                <a
+                  href="https://maniya-kohli.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
+                  portfolio
+                </a>
+                ), and recently dove deep into AI ,architecting a travel agent
+                from scratch with{" "}
+                <span className="font-semibold">
+                  RAG, vector databases (Chroma), LLM orchestration (OpenAI /
+                  Gemini APIs), and a React/Next.js frontend
+                </span>
+                . I’m comfortable moving between backend logic, API design,
+                database scaling, cloud infra, and frontend—whatever it takes to
+                ship.
               </p>
 
               <div className="pt-6">
                 <blockquote className="border-l-4 border-gray-300 pl-4">
                   <p className="text-white">
                     I care about building systems that scale gracefully and fail
-                    safely—clean interfaces, strong observability, and
+                    safely , clean interfaces, strong observability, and
                     automation over toil. My projects span integration
                     frameworks, transactional loyalty flows with rollback
-                    guarantees, and archival pipelines for enterprise
-                    data—always with an eye on reliability, developer
-                    ergonomics, and measurable impact.
+                    guarantees, archival pipelines for enterprise data, and
+                    AI-powered agents, always with an eye on reliability,
+                    developer ergonomics, and measurable impact.
                   </p>
 
                   <div className="mt-6 space-y-1">
                     <cite className="block font-medium text-white">
-                      Maniya Kohli — Software Development Engineer
+                      Maniya Kohli - Software Development Engineer
                     </cite>
                     <div className="text-sm text-zinc-300 space-y-1">
                       <p>
@@ -108,12 +142,30 @@ export default function About() {
                 </blockquote>
               </div>
 
-              <div className="pt-2 text-sm text-zinc-300">
+              {/* Skills / stack footer with clear AI/ML + RAG emphasis */}
+              <div className="pt-2 text-sm text-zinc-300 space-y-1">
                 <p>
-                  Core tools: Python, Node.js, Java, C/C++, TypeScript ·
-                  Databases: MongoDB, PostgreSQL, OpenSearch/Elasticsearch,
-                  MySQL · Cloud/DevOps: AWS, Docker, Grafana · Frameworks:
-                  Spring Boot
+                  <span className="font-semibold">Core Tools & AI/ML:</span>{" "}
+                  Python, Node.js, Java, C/C++, TypeScript, NumPy, Pandas,
+                  scikit-learn, PyTorch, TensorFlow, Jupyter, OpenAI API, Gemini
+                  API, Hugging Face Transformers.
+                </p>
+                <p>
+                  <span className="font-semibold">
+                    Databases (SQL/NoSQL & Vector):
+                  </span>{" "}
+                  MongoDB, PostgreSQL, MySQL, OpenSearch/Elasticsearch,
+                  pgvector, Pinecone, ChromaDB.
+                </p>
+                <p>
+                  <span className="font-semibold">Cloud/DevOps:</span> AWS,
+                  Docker, Grafana.
+                </p>
+                <p>
+                  <span className="font-semibold">
+                    Frameworks (Backend & LLM/RAG):
+                  </span>{" "}
+                  Spring Boot, FastAPI, LangChain, LlamaIndex, Next.js, React.
                 </p>
               </div>
             </div>

@@ -51,10 +51,22 @@ const profile = {
     name: 'Maniya Kohli',
     title: 'Full-Stack Developer | Problem Solver',
     skills: [
-        'NodeJs', 'Python', 'React', 'NextJS', 'Express',
-        'MySQL', 'MongoDB', 'Docker', 'AWS', 'TypeScript',
-        'GraphQL', 'Git', 'Linux', 'Discord Development'
-    ],
+    // Core engineering
+    'TypeScript', 'JavaScript', 'Python',
+    'Next.js', 'React', 'Node.js', 'Express', 'FastAPI',
+    'PostgreSQL', 'MongoDB', 'MySQL',
+    'Docker', 'AWS', 'Linux', 'Git',
+
+    // AI / LLM stack
+    'LangChain', 'PyTorch', 'TensorFlow',
+    'OpenAI API', 'Claude API', 'LlamaIndex', 'scikit-learn',
+
+    // Vector & search
+    'ChromaDB', 'Pinecone', 'Weaviate', 'Redis Vector', 'OpenSearch vector search',
+
+    // Systems & observability
+    'RAG pipelines', 'AI agents', 'Microservices', 'REST APIs', 'Grafana'
+  ],
     hardWorker: true,
     quickLearner: true,
     problemSolver: true,
@@ -135,7 +147,7 @@ const profile = {
     <>
       <main className="bg-[#020617] text-white min-h-screen">
         <section
-          className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
+          className="hero min-h-screen relative px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-24 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
         >
           <div className="absolute inset-0"></div>
@@ -155,7 +167,7 @@ const profile = {
 
           {/* Main content container */}
           <div
-            className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
+            className="container mx-auto flex flex-col lg:flex-row items-start justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
             style={{
               paddingTop:
                 window.innerWidth >= 1360 &&
