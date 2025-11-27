@@ -85,7 +85,6 @@ const profile = {
   useEffect(() => {
     Prism.highlightAll();
 
-    // Add CSS animation for grid and dots
     const style = document.createElement("style");
     style.textContent = `
       @keyframes gridPulse {
@@ -116,7 +115,6 @@ const profile = {
     `;
     document.head.appendChild(style);
 
-    // Apply extra padding for 1366x768 resolution
     const checkResolution = () => {
       const isTargetResolution =
         window.innerWidth >= 1360 &&
@@ -147,27 +145,20 @@ const profile = {
     <>
       <main className="bg-[#020617] text-white min-h-screen">
         <section
-          className="hero min-h-screen relative px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 lg:pt-24 hero-section-padding"
+          className="hero min-h-screen relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
         >
           <div className="absolute inset-0"></div>
 
-          {/* Choose one of these background options */}
           <GridBackground />
 
-          {/* Or keep the original backgrounds if you prefer */}
-          {/* <HexagonBackground /> */}
-          {/* <AnimatedGrid /> */}
-          {/* <DotBackground /> */}
-
-          {/* Meteors Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <Meteors number={10} />
           </div>
 
           {/* Main content container */}
           <div
-            className="container mx-auto flex flex-col lg:flex-row items-start justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
+            className="container mx-auto flex flex-col lg:flex-row items-start justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28 gap-10 lg:gap-16"
             style={{
               paddingTop:
                 window.innerWidth >= 1360 &&
@@ -179,13 +170,13 @@ const profile = {
             }}
           >
             {/* Left column - Text content */}
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
+            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative flex flex-col gap-4 sm:gap-20">
               {/* Decorative blurs */}
               <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
               <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
 
               {/* Welcome badge */}
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 animate__animated animate__fadeInDown animate__delay-1s">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
                 <span className="text-gray-300 text-xs sm:text-sm font-medium">
                   Welcome to my universe
@@ -193,7 +184,7 @@ const profile = {
               </div>
 
               {/* Name section */}
-              <div className="relative mb-6 sm:mb-8">
+              <div className="relative">
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                   <SparklesText text="Hello" />
                   <span className="relative inline-block">
@@ -208,7 +199,7 @@ const profile = {
               </div>
 
               {/* Role badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
                 <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
                 <span>
                   <FlipWords
@@ -219,21 +210,23 @@ const profile = {
               </div>
 
               {/* Description */}
-              <div className="relative mb-8 sm:mb-12 max-w-xl">
+              <div className="relative max-w-2xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
                   Full-Stack Developer 🚀 | Backend Architecture Specialist 💻
-                  Problem solver & innovator crafting scalable solutions 🔧✨
+                  <br className="hidden sm:block" />
+                  Problem solver & innovator crafting scalable, AI-powered
+                  solutions 🔧✨
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex justify-center animate__animated animate__fadeInUp animate__delay-2s mt-6">
+              <div className="flex justify-start animate__animated animate__fadeInUp animate__delay-2s mt-2">
                 <a
                   href="/ManiyaKohliResume_SDE.pdf"
                   download="ManiyaKohli_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <i className="fas fa-file-pdf text-white text-xl animate-pulse"></i>
                   <span>Download Resume</span>
