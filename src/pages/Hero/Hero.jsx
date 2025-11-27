@@ -220,13 +220,13 @@ const profile = {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-nowrap items-center gap-4 animate__animated animate__fadeInUp animate__delay-2s mt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 animate__animated animate__fadeInUp animate__delay-2s mt-2">
                 <a
                   href="/ManiyaKohliResume_SDE.pdf"
                   download="ManiyaKohli_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 group flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] whitespace-nowrap"
+                  className="w-full sm:flex-1 group inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] sm:whitespace-nowrap"
                 >
                   <i className="fas fa-file-pdf text-white text-xl animate-pulse"></i>
                   <span>Download Resume</span>
@@ -234,7 +234,7 @@ const profile = {
 
                 <a
                   href="/projects" // or "#projects" if it's a section on the same page
-                  className="flex-1 group flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] whitespace-nowrap"
+                  className="w-full sm:flex-1 group inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-500 to-teal-400 text-white font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA] sm:whitespace-nowrap"
                 >
                   <i className="fas fa-code text-white text-xl"></i>
                   <span>See my Projects</span>
